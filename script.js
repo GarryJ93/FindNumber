@@ -48,7 +48,7 @@ let message = document.getElementById("message");
 let reset = document.getElementById("reset");
 let mysteryNum = Math.round(Math.random() * 100);
 let count = 1;
-const canvas = document.querySelector('#confetti-canvas');
+const canvas = document.querySelector("#confetti-canvas");
 submit.addEventListener("click", function () {
   if (answer.value == mysteryNum) {
     message.innerHTML =
@@ -57,22 +57,32 @@ submit.addEventListener("click", function () {
     reset.style = "visibility: visible;";
     let myConfetti = confetti.create(canvas, {
       resize: true,
-      useWorker: true
+      useWorker: true,
     });
     myConfetti({
       particleCount: 100,
-      spread: 160
+      spread: 160,
     });
   }
   while (answer.value != mysteryNum) {
     if (answer.value < mysteryNum) {
       message.innerHTML = "Le nombre mystère est plus grand !";
       count++;
-      played.innerHTML += ", " + answer.value;
+      if (count > 2) {
+        played.innerHTML += ", " + answer.value;
+      }
+      else {
+        played.innerHTML += "Proposés: " + answer.value;
+      }
     } else if (answer.value > mysteryNum) {
       message.innerHTML = "Le nombre mystère est plus petit !";
       count++;
-      played.innerHTML += ", " + answer.value;
+       if (count > 2) {
+        played.innerHTML += ", " + answer.value;
+      }
+      else {
+        played.innerHTML += "Proposés: " + answer.value;
+      }
     }
 
     return true;
