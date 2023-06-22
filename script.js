@@ -48,12 +48,21 @@ let message = document.getElementById("message");
 let reset = document.getElementById("reset");
 let mysteryNum = Math.round(Math.random() * 100);
 let count = 1;
+const canvas = document.querySelector('#confetti-canvas');
 submit.addEventListener("click", function () {
   if (answer.value == mysteryNum) {
     message.innerHTML =
       "Félicitations vous avez trouvé en " + count + " coups.";
     played.innerHTML = answer.value + " était la bonne réponse.";
     reset.style = "visibility: visible;";
+    let myConfetti = confetti.create(canvas, {
+      resize: true,
+      useWorker: true
+    });
+    myConfetti({
+      particleCount: 100,
+      spread: 160
+    });
   }
   while (answer.value != mysteryNum) {
     if (answer.value < mysteryNum) {
