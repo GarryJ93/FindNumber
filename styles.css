@@ -1,0 +1,56 @@
+body {
+    display: flex; 
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(3, 32, 47);
+    background-image: url(galaxy.png);
+    background-size: cover;
+    background-position-x: center;
+}
+#validate {
+    margin: 1em auto;
+    border: 3px inset rgb(101, 17, 118);
+    border-radius: 50px;
+    padding: 10px;
+    width: 80%;
+    background : linear-gradient(20deg, rgb(101, 17, 118), rgb(208, 142, 221), rgb(55, 4, 65));
+    color:rgb(55, 4, 65);
+    font-size: 1.2em;
+    font-weight: 900;
+}
+#user-answer {
+    margin: 2em;
+
+}
+#answer-title {
+    margin: 2em;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+#game {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 3px inset rgb(101, 17, 118);
+    border-radius: 25px;
+    margin-top: 10em;
+    background-color: rgb(220, 119, 220);
+    box-shadow: 0 0 10px 10px rgba(4, 65, 232, 0.418);
+}
+p {
+    color:rgb(32, 13, 13);
+    font-weight: 600;
+    font-size: 1em;
+    margin: 0 5px 5px 5px;
+}
+#reset {
+    visibility: hidden;
+    border: 3px inset rgb(101, 17, 118);
+    border-radius: 50px;
+    padding: 10px;
+    width: 80%;
+    background : linear-gradient(20deg, rgb(101, 17, 118), rgb(208, 142, 221), rgb(55, 4, 65));
+    color:rgb(55, 4, 65);
+    font-size: 1.2em;
+    font-weight: 900;
+}
